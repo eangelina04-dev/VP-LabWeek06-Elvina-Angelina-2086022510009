@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/book.dart';
 import '../viewmodels/library_view_model.dart';
-import 'book_group_section.dart';
+import 'book_card.dart';
 import 'borrowed_books_screen.dart';
 import 'shared.dart';
 
@@ -59,7 +59,7 @@ class LibraryScreen extends StatelessWidget {
                 tooltip: 'Pinjaman',
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (_) => BorrowedBooksScreen(viewModel: viewModel),
+                    builder: (_) => BorrowedBooksScreen(libraryViewModel: viewModel),
                   ),
                 ),
               ),
