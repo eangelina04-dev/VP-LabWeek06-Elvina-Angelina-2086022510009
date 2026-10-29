@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/loan.dart';
 import '../viewmodels/display_status.dart';
-import 'status_chip.dart';
-import 'view_helpers.dart';
+import 'shared.dart';
 
 class LoanCard extends StatelessWidget {
   const LoanCard({

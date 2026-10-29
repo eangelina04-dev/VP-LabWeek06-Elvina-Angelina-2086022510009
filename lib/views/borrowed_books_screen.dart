@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../viewmodels/library_view_model.dart';
-import 'fine_summary_card.dart';
+import 'shared.dart';
 import 'loan_card.dart';
-import 'view_helpers.dart';
 
 class BorrowedBooksScreen extends StatelessWidget {
   const BorrowedBooksScreen({super.key, required this.viewModel});

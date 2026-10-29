@@ -12,15 +12,18 @@ class LibraryViewModel extends ChangeNotifier {
   static const int loanDays = 7;
 
   final LibraryRepository _repository;
-  late List<Book> _books;
-  late List<Loan> _loans;
+  List<Book> _books = [];
+  List<Loan> _loans = [];
   DateTime? _simulatedToday;
 
   LibraryViewModel({LibraryRepository? repository})
-      : _repository = repository ?? LibraryRepository() {
-    _books = _repository.getBooks();
+      : _repository = repository ?? LibraryRepository();
+  Future<void> init() async {
+    await _repository.init();
+    _books = _repository.getBooks(); 
     _loans = _repository.getLoans();
     if (_declareMissingLoans()) _save();
+    notifyListeners();
   }
 
   List<Book> get books => List.unmodifiable(_books);
